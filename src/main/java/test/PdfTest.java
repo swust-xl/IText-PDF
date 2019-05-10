@@ -52,6 +52,10 @@ public class PdfTest {
                     .getSubjectDN());
             System.out.println("证书发行者: " + sign.getSigningCertificate()
                     .getIssuerDN());
+            System.out.println("证书起始期: " + dateFormatter.format(sign.getSigningCertificate()
+                    .getNotBefore()));
+            System.out.println("证书结束期: " + dateFormatter.format(sign.getSigningCertificate()
+                    .getNotAfter()));
             System.out.println("签名验证有效性: " + sign.verify());
             System.out.println("签名时间戳时间: " + dateFormatter.format(sign.getTimeStampToken()
                     .getTimeStampInfo()
